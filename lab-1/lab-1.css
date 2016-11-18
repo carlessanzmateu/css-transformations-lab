@@ -4,6 +4,7 @@ span {
   height: 100px;
   background: #444;
   margin: 4em auto;
+  /*transition: property duration delay option*/
   transition: background 0.5s, width 0.5s, height 0.5s;
 }
 
