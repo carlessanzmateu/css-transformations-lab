@@ -5,7 +5,7 @@ This project _pretend_ to be a **css lab testing environment**. I'm going to wri
 From here, the readme goes to spanish. The real focus of doing this lab sessions is to achive a quick guide reference, so it has more sense to me print a guide in my language
 
 -----
-## Teoría   v0.3.1
+## Teoría   v0.4.0
 -----
 
 ### Elementos de bloque:
@@ -161,3 +161,58 @@ div:hover {
 
 ```
 \* Estos dos snippets **son equivalentes**
+
+
+Las propiedades se pueden concatenar en una misma función o se puede poner por separado. Si se ponen juntas, basta con separar con comas:
+
+```css
+div {
+  width: 100px;
+  height: 100px;s
+  background: orange;
+  transition: background 1s, width 1s 10s, height 1s 1s ease;
+}
+
+div {
+  width: 500px;
+  height: 500px;
+  background: blue;
+}
+```
+
+```css
+div {
+  width: 100px;
+  height: 100px;s
+  background: orange;
+  transition: background 1s;
+  transition: width 1s 10s;
+  transition: height 1s 1s ease;
+}
+
+div {
+  width: 500px;
+  height: 500px;
+  background: blue;
+}
+```
+
+**Por otro lado, el siguiente ejemplo no tendría efecto y sobreescribiría la transición**
+
+```css
+div {
+  width: 100px;
+  height: 100px;s
+  background: orange;
+  transition: background 1s, width 1s 10s, height 1s 1s ease;
+
+  transition: height: 1s 1s ease;
+}
+
+div {
+  width: 500px;
+  height: 500px;
+  background: blue;
+}
+```
+Definir dos transiciones para una misma propiedad, sobreescribe la transición.
