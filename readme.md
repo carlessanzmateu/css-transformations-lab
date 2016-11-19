@@ -5,7 +5,7 @@ This project _pretend_ to be a **css lab testing environment**. I'm going to wri
 From here, the readme goes to spanish. The real focus of doing this lab sessions is to achive a quick guide reference, so it has more sense to me print a guide in my language
 
 -----
-## Teoría   v0.2.0
+## Teoría   v0.2.1
 -----
 
 ### Elementos de bloque:
@@ -68,6 +68,7 @@ _**~index.html**_
 </div>
 ```
 
+_**~style.css**_
 ```css
   p {
     color: blue;
