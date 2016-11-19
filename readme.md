@@ -5,7 +5,7 @@ This project _pretend_ to be a **css lab testing environment**. I'm going to wri
 From here, the readme goes to spanish. The real focus of doing this lab sessions is to achive a quick guide reference, so it has more sense to me print a guide in my language
 
 -----
-## Teoría   v0.1.0
+## Teoría   v0.2.0
 -----
 
 ### Elementos de bloque:
@@ -87,3 +87,22 @@ _**~index.html**_
 **table-column**: _el elemento actúa cómo un elemento:_```<col>```
 
 **table-row**: _el elemento actúa cómo un elemento:_```<tr>```
+
+-----
+
+### position
+Determina el _tipo_ de posicionamiento de un elemento en el documento.
+
+##### position values:
+
+**static**: _El elemento se renderiza en el orden en el que aparece en el documento. Es el valor por defecto._
+
+**absolute**: _El elemento se posiciona relativamente respecto a su a primer elemento ancestro que no esté posicionado de forma estática._
+
+**fixed**: _El elemento se posiciona respecto a la ventana del navegador._
+
+**relative**: _El elemento se posiciona respecto a su posición su posición por defecto._
+
+**initial**: _El elemento se posiciona respecto a su posición por defecto._
+
+**inherit**: _El elemento hereda esta propiedad de su elemento padre._
