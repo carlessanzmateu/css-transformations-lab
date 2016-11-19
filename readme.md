@@ -5,7 +5,7 @@ This project _pretend_ to be a **css lab testing environment**. I'm going to wri
 From here, the readme goes to spanish. The real focus of doing this lab sessions is to achive a quick guide reference, so it has more sense to me print a guide in my language
 
 -----
-## Teoría   v0.2.1
+## Teoría   v0.3.1
 -----
 
 ### Elementos de bloque:
@@ -107,3 +107,57 @@ Determina el _tipo_ de posicionamiento de un elemento en el documento.
 **initial**: _El elemento se posiciona respecto a su posición por defecto._
 
 **inherit**: _El elemento hereda esta propiedad de su elemento padre._
+
+-----
+
+### transition:
+
+Permite cambiar los valores de un elemento en una duración predeterminada.
+
+La propiedad `transition` por defecto debe definirse en el bloque css con los atributos por defecto y apuntar a las propiedades que se quieren alterar en algún momento o evento.
+
+```css
+
+div {
+  width: 100px;
+  transition: width;
+}
+
+div:hover {
+  width: 200px;
+}
+
+```
+Cuando se haga `hover` sobre un elemento `<div>`, este duplicara su ancho.
+
+La propiedad `transition` admite cuatro parámetros, por lo tanto, se puede usar una única _función_ con al menos el primer parámetro (o los cuatro), o se puede definir cada parámetro por separado:
+
+```css
+
+div {
+  width: 100px;
+  transition: width 1s 1s ease;
+}
+
+div:hover {
+  width: 200px;
+}
+
+```
+
+```css
+
+div {
+  width: 100px;
+  transition-property: width;
+  transition-duration: 1s;
+  transition-delay: 1s;
+  transition-timing-function: ease;
+}
+
+div:hover {
+  width: 200px;
+}
+
+```
+\* Estos dos snippets **son equivalentes**
