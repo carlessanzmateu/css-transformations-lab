@@ -5,7 +5,7 @@ This project _pretend_ to be a **css lab testing environment**. I'm going to wri
 From here, the readme goes to spanish. The real focus of doing this lab sessions is to achive a quick guide reference, so it has more sense to me print a guide in my language
 
 -----
-## Teoría   v0.4.0
+## Teoría   v0.5.0
 -----
 
 ### Elementos de bloque:
@@ -216,3 +216,67 @@ div {
 }
 ```
 Definir dos transiciones para una misma propiedad, sobreescribe la transición.
+
+
+Por otro lado, también existe una abreviación para aplicar nuestros parámetros a todas las propiedades:
+
+```css
+div {
+  width: 100px;
+  height: 100px;s
+  background: orange;
+  transition: all 1s 1s ease;
+
+}
+
+div {
+  width: 500px;
+  height: 500px;
+  background: blue;
+}
+
+```
+\*transition all, modificará el width, el height y el background al hacer hover sobre el div
+
+**Si definimos la `transition` en el hover:**
+
+```css
+div {
+  width: 100px;
+  height: 100px;s
+  background: orange;
+
+}
+
+div {
+  width: 500px;
+  height: 500px;
+  background: blue;
+  transition: all 1s 1s ease;
+}
+
+```
+
+La transición se aplicará al hacer hover, pero cuando dejemos de hacer hover, los valores iniciales volverán de forma brusca. Es decir, no habrá transción de "retorno". Esto es porque la transición entiende que se debe efectuar solo cuando exista evento `hover`, lo que ocurra después no debe tener efecto de transición.
+
+**Definir la transición en el elemento principal y en el evento:**
+
+```css
+div {
+  width: 100px;
+  height: 100px;s
+  background: orange;
+  transition: all 0.5s;
+}
+
+div {
+  width: 500px;
+  height: 500px;
+  background: blue;
+  transition: all 10s;
+}
+
+```
+En este caso, cuando se dispare el evento `hover`, se aplicará la transición definida en él, y en el cualquier otro caso, la definida en el principal.
+
+En este código en concreto, crecerá durante 10 segundos y al terminar el evento de `hover`, volverá a sus valores iniciales en medio segundo. En este caso, no terminará de forma brusca, porque tiene una transición definida en el elemento principal.
