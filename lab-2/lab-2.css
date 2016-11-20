@@ -9,6 +9,8 @@ section {
 }
 
 section .center {
+  margin-left: 29vw;
+  margin-top: 17vh;
   width: 354px;
   height: 470px;
   background-image: url('assets/mobile.svg');
