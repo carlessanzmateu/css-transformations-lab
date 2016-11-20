@@ -5,7 +5,7 @@ This project _pretend_ to be a **css lab testing environment**. I'm going to wri
 From here, the readme goes to spanish. The real focus of doing this lab sessions is to achive a quick guide reference, so it has more sense to me print a guide in my language
 
 -----
-## Teoría   v0.5.0
+## Teoría   v0.6.0
 -----
 
 ### Elementos de bloque:
@@ -15,6 +15,57 @@ Elementos que de forma predeterminada, comienzan una nueva línea en el document
 ### Elementos de línea:
 
 Elementos que pueden comenzar en cualquier parte de una línea.
+
+-----
+
+### position
+Determina el _tipo_ de posicionamiento de un elemento en el documento.
+
+##### position values:
+
+**static**: _El elemento se renderiza en el orden en el que aparece en el documento. Es el valor por defecto._
+
+**absolute**: _El elemento se posiciona relativamente respecto a su a primer elemento ancestro que no esté posicionado de forma estática._
+
+**fixed**: _El elemento se posiciona respecto a la ventana del navegador._
+
+**relative**: _El elemento se posiciona respecto a su posición su posición por defecto._
+
+**initial**: _El elemento se posiciona respecto a su posición por defecto._
+
+**inherit**: _El elemento hereda esta propiedad de su elemento padre._
+
+-----
+
+### top, bottom, left, right
+
+Para elementos con `position: absolute`:
+
+**top**: Esta propiedad hubicará un elemento arriba o abajo respecto al lado **superior** del ancestro posicionado más cercano.
+**bottom**: Esta propiedad hubicará un elemento arriba o abajo respecto al lado **inferior** del ancestro posicionado más cercano.
+
+**left**: Esta propiedad hubicará un elemento arriba o abajo respecto al lado **izquierdo** del ancestro posicionado más cercano.
+
+**right**: Esta propiedad hubicará un elemento arriba o abajo respecto al lado **derecho** del ancestro posicionado más cercano.
+
+**NOTA**: Si un elemento posicionado `absolute`, no tiene ancestros posicionados, usa el body del documento.
+**NOTA 2**: Un elemento '_posicionado_', serán aquellos cuya posición sea cualquier valor excepto `static`.
+
+Para elementos posicionados `relative`, el elemento se desplazará arriba o abajo de su borde, respecto a su posición normal de **él mismo**.
+
+**NOTA 3**: Si la posición es `static`, estas propiedades no tendrán efecto.
+
+##### top, bottom, left, right  values:
+
+**auto**: _El navegador calcula la posición correcta respecto al lado seleccionado. Es la opción por defecto._
+
+**length**: _Posiciona el elemento respecto a un valor dado: 20px, 2cm, 6em... Se permiten valores negativos._
+
+**%**: _Permite posicionar un elemento respecto al borde seleccionado en tanto por cien (%) dependiendo del padre contenedor._
+
+**initial**: _Recupera su posición por defecto respecto a ese lado._
+
+**inherit**: _Hereda esta propiedad respecto al elemento padre._
 
 -----
 
@@ -91,28 +142,26 @@ _**~style.css**_
 
 -----
 
-### position
-Determina el _tipo_ de posicionamiento de un elemento en el documento.
-
-##### position values:
-
-**static**: _El elemento se renderiza en el orden en el que aparece en el documento. Es el valor por defecto._
-
-**absolute**: _El elemento se posiciona relativamente respecto a su a primer elemento ancestro que no esté posicionado de forma estática._
-
-**fixed**: _El elemento se posiciona respecto a la ventana del navegador._
-
-**relative**: _El elemento se posiciona respecto a su posición su posición por defecto._
-
-**initial**: _El elemento se posiciona respecto a su posición por defecto._
-
-**inherit**: _El elemento hereda esta propiedad de su elemento padre._
-
------
-
 ### transition:
 
 Permite cambiar los valores de un elemento en una duración predeterminada.
+
+##### transition-timing-function values
+
+Esta _función_ determina la curva de velocidad de la transición.
+
+**ease**: _Transición con inicio lento, luego rápido y el final nuevamente lento._
+
+**ease-in**: _Inicio lento._
+
+**ease-out**: _Final lento._
+
+**ease-in-out**: _Inicio y final lento._
+
+**linear**: _La transición conserva la misma velocidad de inicio a fin._
+
+
+##### Análisis de transition
 
 La propiedad `transition` por defecto debe definirse en el bloque css con los atributos por defecto y apuntar a las propiedades que se quieren alterar en algún momento o evento.
 
@@ -280,3 +329,35 @@ div {
 En este caso, cuando se dispare el evento `hover`, se aplicará la transición definida en él, y en el cualquier otro caso, la definida en el principal.
 
 En este código en concreto, crecerá durante 10 segundos y al terminar el evento de `hover`, volverá a sus valores iniciales en medio segundo. En este caso, no terminará de forma brusca, porque tiene una transición definida en el elemento principal.
+
+-----
+
+### overflow
+
+Esta propiedad determina que ocurre si un elemento sobrepasa el elemento _caja_ que lo contiene. (Por ejemplo añadir barras de scroll).
+
+**Esta propiedad solo funciona para elementos de bloque y que tengan un `height` definido.**
+
+##### overflow values:
+
+**visible**: _No se recorta lo que sobresale. Se renderiza por fuera de la caja. Es el comportamiento por defecto._
+
+**hidden**: _Se corta el `overflow`, y el resto del elemento se vuelve invisible._
+
+**scroll**: _Se corta el `overflow`, pero se añaden barras de scroll para ver el resto del contenido._
+
+**auto**: _**Si** se corta el `overflow`, debería aparecer una barra de scroll._
+
+**initial**: _Devuelve al elemento a su estado inicial por defecto._
+
+**inherit**: _Hereda esta propiedad de su elemento padre._
+
+-----
+
+### HTML - Valores importantes:
+
+##### Atributos:
+
+**hidden**: Los elementos HTML con este atributo, no son relevantes, por lo que no deben ser renderizados en el documento.
+
+**aria-hidden**: `aria-hidden="true"`, indica que este elemento y ninguno de sus descendientes debe ser visible.
